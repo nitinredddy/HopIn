@@ -18,12 +18,10 @@ const userSchema = new mongoose.Schema({
     },
     role:{
         type:String,
-        enum:["pilot","backpacker"],
-        required:true
+        enum:["pilot","backpacker"]
     },
     contact:{
         type:String,
-        required:true
     },
     isVerifiedDriver:{
         type:Boolean,
