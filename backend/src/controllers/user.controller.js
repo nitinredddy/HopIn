@@ -134,7 +134,7 @@ const logout = asyncHandler(async(req,res)=>{
         secure:true,
         sameSite:"strict"
     }
-
+    
     res.clearCookie("accessToken",options)
     res.clearCookie("refreshToken",options)
 
@@ -143,4 +143,10 @@ const logout = asyncHandler(async(req,res)=>{
     .json(new ApiResponse(200,null,"User logged out successfully"))
 })
 
-export {signup,selectRole,updateProfile,login,logout}
+const getUser = asyncHandler(async(req,res)=>{
+    return res
+    .status(200)
+    .json(new ApiResponse(200,req.user,"User fetched successfully"))
+})
+
+export {signup,selectRole,updateProfile,login,logout,getUser}
